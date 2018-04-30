@@ -35,17 +35,17 @@ vector<string>
 
 
 # How to build
-you can build this project using CMake, or you can import **serialization.h** into your project.
+You can build this project using CMake, or you can import **serialization.h** into your project.
 
-Build process with Cmake:
+Build process with CMake:
 
 ```sh
-	mkdir prj
-	cd prj
-	cmake ..
+mkdir prj
+cd prj
+cmake ..
 ```
 If this doesn't work, ensure that you're building under the C++11 spec.
 
 
 # Demonstration
-Check out src/testSerialization.cpp 
+Check out `src/testSerialization.cpp`
