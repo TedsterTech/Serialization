@@ -1,23 +1,22 @@
 
-# A lite serialization solution
-there are several lib out there support serialization,like protobuffer,flatbuffers,capnproto.
-Need schema file for generating source files, which is cool between peers. 
-but that is too heavy for me. so I wrote this lite version.only support c++. 
-If your just want to serialize & deserialize data on the same machine. I think it is a  good choice. simple as it is , hack whatever u want.
-
-# Only Head file needed
+# A lightweight serialization solution
+There are several libraries already out there which support serialization like Protobuffer, Flatbuffers and Capnproto.
+However, these need schema file for generating source files, which is cool between peers. 
+But that is too heavy for me (zk4), so I wrote this lightweight version, which only supports C++.
+If you just want to serialize and deserialize data on the same machine, I think that this is a good choice.
+# You only need the header file:
 ```cpp
 src/core/serialization.h 
 ```
-that`s it!You are set to go!	
+And you're good to go!
 
-#support 
-* vector
-* list
-* map
+# This supports: 
+* vectors
+* lists
+* maps
 * set
-* string
-* primitives(int,double,long,...)
+* strings
+* primitives (integers, doubles,longs, etcetera)
 * nesting container support
 ```cpp
 Obj : implements serialize:I interface
@@ -29,28 +28,24 @@ vector<Obj>
 vector<string>  
 ```
 * endian auto conversion  
-  no need to worry about endian problem.all data is writed in little endian.
+  There's no need for endian concern - all data is written in little endian.
 
 
-use char instead bool in STL
-[why](http://stackoverflow.com/questions/15809157/why-is-the-size-of-stdvectorbool-16-byte)
+[Use characters instead of booleans in Standard Template Library](http://stackoverflow.com/questions/15809157/why-is-the-size-of-stdvectorbool-16-byte)
 
 
-#  build
-you can build this project by CMake. or  just import **serialization.h** into your project.
+# How to build
+you can build this project using CMake, or you can import **serialization.h** into your project.
 
-cmake build process:
+Build process with Cmake:
 
 ```sh
 	mkdir prj
 	cd prj
 	cmake ..
 ```
-if it doesn`t work. set compile flags to c++11
+If this doesn't work, ensure that you're building under the C++11 spec.
 
 
-# demo
-check testSerialization.cpp 
- 
- 
-
+# Demonstration
+Check out src/testSerialization.cpp 
